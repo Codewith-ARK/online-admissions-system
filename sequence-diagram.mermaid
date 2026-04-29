@@ -1,0 +1,76 @@
+sequenceDiagram
+    autonumber
+    actor Applicant
+    participant UI as Web App
+    participant API as Backend
+    participant DB as Database
+    actor IM as Institution Manager
+    actor PA as Platform Admin
+
+    %% --- UNIVERSITY CREATION FLOW ---
+    IM->>UI: Start onboarding
+    UI->>IM: Show setup steps (details, bio, images, location, benefits, scholarships)
+    IM->>UI: Submit university + programs
+    UI->>API: Create university (status: Pending)
+    API->>DB: Store university + programs
+    API-->>UI: Success (Pending Approval)
+
+    %% --- PLATFORM APPROVAL ---
+    PA->>UI: View pending universities
+    UI->>API: Fetch pending listings
+    API->>DB: Query pending
+    DB-->>API: Listings
+    API-->>UI: Show list
+
+    PA->>UI: Approve / Reject listing
+    UI->>API: Update status
+    API->>DB: Save status (Approved)
+    API-->>UI: Confirmation
+
+    %% --- APPLICANT FLOW ---
+    Applicant->>UI: Browse universities
+    UI->>API: Fetch approved universities
+    API->>DB: Query approved
+    DB-->>API: Data
+    API-->>UI: Show listings
+
+    Applicant->>UI: View university + programs
+
+    %% --- APPLICATION FLOW ---
+    Applicant->>UI: Start application
+    UI-->>Applicant: Stepper form (Personal, Academic, Documents, Review)
+
+    loop Fill Steps
+        Applicant->>UI: Enter data
+        UI->>API: Save draft
+        API->>DB: Store draft
+    end
+
+    Applicant->>UI: Submit application
+    UI->>API: Submit
+    API->>DB: Save (status: DRAFT → REVIEWED)
+    API-->>UI: Submission success
+
+    %% --- APPLICATION REVIEW ---
+    IM->>UI: View applications
+    UI->>API: Fetch applications
+    API->>DB: Query by university
+    DB-->>API: Applications
+    API-->>UI: Show list
+
+    IM->>UI: Open application
+    UI->>API: Fetch details
+    API->>DB: Get full application
+    API-->>UI: Show profile
+
+    IM->>UI: Update status
+    Note right of IM: REVIEWED → APPROVED / REJECTED / WAITLISTED / WITHHELD
+    UI->>API: Update application status
+    API->>DB: Save status + log
+
+    %% --- STATUS TRACKING (TIMELINE) ---
+    Applicant->>UI: View application status
+    UI->>API: Fetch status history
+    API->>DB: Get status logs
+    API-->>UI: Timeline data
+    UI-->>Applicant: Show timeline (status progression)
