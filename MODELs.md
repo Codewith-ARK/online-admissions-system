@@ -1,3 +1,5 @@
+# Models
+
 ## User
 
 ```sql
@@ -132,3 +134,12 @@ ApplicationLog {
   createdAt: Date
 }
 ```
+
+# Relationships (Mental Model)
+- User (1) → (many) Universities
+- University (1) → (many) Programs
+- University (1) → (many) Scholarships
+- Program (1) → (many) Applications
+- User (Applicant) (1) → (many) Applications
+- Application (1) → (many) Documents
+- Application (1) → (many) Logs
