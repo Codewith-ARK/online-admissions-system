@@ -1,0 +1,1 @@
+export type UserRoles = 'APPLICANT' | 'INSTITUTE_MANAGEMENT' | 'SUPER_ADMIN'; 

@@ -1,0 +1,23 @@
+[
+	{
+		"id": 1,
+		"name": "Applicant User",
+		"email": "applicant@oas.com",
+		"password": "applicant123",
+		"role": "APPLICANT"
+	},
+	{
+		"id": 2,
+		"name": "Institute Manager",
+		"email": "manager@oas.com",
+		"password": "manager123",
+		"role": "INSTITUTE_MANAGEMENT"
+	},
+	{
+		"id": 3,
+		"name": "Super Admin",
+		"email": "admin@oas.com",
+		"password": "admin123",
+		"role": "SUPER_ADMIN"
+	}
+]
