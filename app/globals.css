@@ -1,4 +1,8 @@
 @import "tailwindcss";
+/* @plugin "flowbite/plugin"; */
+/* @import "flowbite-react/plugin/tailwindcss"; */
+/* @source "../.flowbite-react/class-list.json"; */
+/* @source "../node_modules/flowbite-react/dist"; */
 @plugin "daisyui";
 
 :root {
