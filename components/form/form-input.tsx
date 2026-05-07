@@ -19,12 +19,12 @@ const InputField = ({
 }: FormInputProps) => {
     const { register } = useFormContext();
     return (
-        <fieldset className="fieldset">
+        <fieldset className={`${"fieldset"} ${className}`}>
             <legend className="fieldset-legend">{label}</legend>
             <input
                 type={type}
                 placeholder="Type here"
-                className={`input ${className ?? ''}`}
+                className={`input w-full`}
                 {...inputProps}           // overrides defaults if passed
                 {...register(name)}  // register should be last (owns onChange/onBlur)
             />

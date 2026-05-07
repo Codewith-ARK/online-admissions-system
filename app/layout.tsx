@@ -27,6 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
+      data-theme="light"
       lang="en"
       className={`${Heading.className} ${Content.className} h-full antialiased`}
     >

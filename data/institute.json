@@ -1,14 +1,107 @@
 [
   {
-    "bio": "",
-    "name": "",
-    "url": "",
-    "id": 1
+    "id": "1",
+    "title": "Karachi Medical and Health Sciences Institute",
+    "address": "University Road, Karachi, Sindh",
+    "type": "PUBLIC",
+    "desc": "A public institute focused on medical and allied health education with strong clinical training links.",
+    "programs": [
+      {
+        "title": "MBBS",
+        "description": "Undergraduate medical program with hospital-based clinical rotations.",
+        "durationInMonths": 60,
+        "feeInPKR": 650000
+      },
+      {
+        "title": "BS Nursing",
+        "description": "Professional nursing degree with community health and lab practice.",
+        "durationInMonths": 48,
+        "feeInPKR": 220000
+      }
+    ]
   },
   {
-    "bio": "",
-    "name": "",
-    "url": "",
-    "id": 2
+    "id": "2",
+    "title": "Lahore Institute of Technology",
+    "address": "Main Boulevard, Lahore, Punjab",
+    "type": "PRIVATE",
+    "desc": "A private institute offering modern computing and engineering programs for industry-ready graduates.",
+    "programs": [
+      {
+        "title": "BS Computer Science",
+        "description": "Comprehensive computing program covering software engineering, AI, and systems.",
+        "durationInMonths": 48,
+        "feeInPKR": 540000
+      },
+      {
+        "title": "BS Software Engineering",
+        "description": "Project-driven software engineering degree with product development focus.",
+        "durationInMonths": 48,
+        "feeInPKR": 580000
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Islamabad College of Commerce",
+    "address": "Blue Area, Islamabad Capital Territory",
+    "type": "SEMI-GOVERNMENT",
+    "desc": "A semi-government institute with strong business, finance, and management studies.",
+    "programs": [
+      {
+        "title": "BBA",
+        "description": "Business administration program with marketing, finance, and leadership tracks.",
+        "durationInMonths": 48,
+        "feeInPKR": 360000
+      },
+      {
+        "title": "BS Accounting and Finance",
+        "description": "Degree for accounting, auditing, and financial analysis careers.",
+        "durationInMonths": 48,
+        "feeInPKR": 390000
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Peshawar Institute of Agricultural Sciences",
+    "address": "Ring Road, Peshawar, Khyber Pakhtunkhwa",
+    "type": "PUBLIC",
+    "desc": "A public-sector institute supporting agriculture, food security, and rural development.",
+    "programs": [
+      {
+        "title": "BS Agriculture",
+        "description": "Program covering agronomy, soil science, and crop production systems.",
+        "durationInMonths": 48,
+        "feeInPKR": 180000
+      },
+      {
+        "title": "BS Food Science",
+        "description": "Study of food processing, quality control, and safety management.",
+        "durationInMonths": 48,
+        "feeInPKR": 200000
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Multan School of Allied Health",
+    "address": "Bosan Road, Multan, Punjab",
+    "type": "PRIVATE",
+    "desc": "A private institute dedicated to allied health, diagnostics, and rehabilitation studies.",
+    "programs": [
+      {
+        "title": "Doctor of Physical Therapy",
+        "description": "Clinical rehabilitation degree with practical exposure in therapeutic care.",
+        "durationInMonths": 60,
+        "feeInPKR": 720000
+      },
+      {
+        "title": "BS Medical Laboratory Technology",
+        "description": "Laboratory-focused program for diagnostics and specimen analysis.",
+        "durationInMonths": 48,
+        "feeInPKR": 300000
+      }
+    ]
   }
 ]

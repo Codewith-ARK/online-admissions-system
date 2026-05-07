@@ -2,5 +2,5 @@ import { insertOne } from "@/lib/db/db";
 
 export async function POST(request: Request) {
     const data = await request.json();
-    insertOne('institute', data);
+    insertOne('users', data);
 }

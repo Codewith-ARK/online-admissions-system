@@ -1,7 +1,11 @@
+'use client';
 import { Menu, Search } from 'lucide-react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 function Navbar() {
+    const router = useRouter();
     return (
         <div className="max-lg:collapse bg-base-200 shadow-sm w-full rounded-md">
             <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
@@ -11,11 +15,12 @@ function Navbar() {
                     <label htmlFor="navbar-1-toggle" className="btn btn-ghost lg:hidden">
                         <Menu />
                     </label>
-                    <button className="btn btn-ghost text-xl">AdmissionsPro</button>
+                    <Link href={'/'} className="btn btn-ghost text-xl">AdmissionsPro</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><button>Program</button></li>
+                        <li><button onClick={()=>router.push('/institute')}>University</button></li>
                         <li><button>Scholarships</button></li>
                         <li><button>Contact</button></li>
                         {/* <li>
