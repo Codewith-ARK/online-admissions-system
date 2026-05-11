@@ -5,7 +5,7 @@ import InputField from '../form/form-input';
 import SelectInput from '../form/form-select-input';
 import { ArrowRight } from 'lucide-react';
 
-const InstituteApplyPage = () => {
+const  InstituteApplyPage = () => {
     const methods = useForm();
     return (
         <section className='max-w-3xl mx-auto p-10'>

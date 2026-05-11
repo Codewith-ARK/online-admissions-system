@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "title": "Karachi Medical and Health Sciences Institute",
     "address": "University Road, Karachi, Sindh",
     "type": "PUBLIC",
@@ -21,7 +21,7 @@
     ]
   },
   {
-    "id": "2",
+    "id": 2,
     "title": "Lahore Institute of Technology",
     "address": "Main Boulevard, Lahore, Punjab",
     "type": "PRIVATE",
@@ -42,7 +42,7 @@
     ]
   },
   {
-    "id": "3",
+    "id": 3,
     "title": "Islamabad College of Commerce",
     "address": "Blue Area, Islamabad Capital Territory",
     "type": "SEMI-GOVERNMENT",
@@ -63,7 +63,7 @@
     ]
   },
   {
-    "id": "4",
+    "id": 4,
     "title": "Peshawar Institute of Agricultural Sciences",
     "address": "Ring Road, Peshawar, Khyber Pakhtunkhwa",
     "type": "PUBLIC",
@@ -84,7 +84,7 @@
     ]
   },
   {
-    "id": "5",
+    "id": 5,
     "title": "Multan School of Allied Health",
     "address": "Bosan Road, Multan, Punjab",
     "type": "PRIVATE",
@@ -101,6 +101,12 @@
         "description": "Laboratory-focused program for diagnostics and specimen analysis.",
         "durationInMonths": 48,
         "feeInPKR": 300000
+      },
+      {
+        "title": "Computer Science",
+        "description": "Clinical rehabilitation degree with practical exposure in therapeutic care.",
+        "durationInMonths": 60,
+        "feeInPKR": 720000
       }
     ]
   }

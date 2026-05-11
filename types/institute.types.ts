@@ -6,6 +6,7 @@ export type Eligibility = {
 }
 
 export type Program = {
+    id?: number;
     title: string;
     description: string;
     durationInMonths: number;
@@ -14,7 +15,7 @@ export type Program = {
 }
 
 export type Institute = {
-    id: string;
+    id: number;
     title: string;
     address?: string;
     type: InstituteType;

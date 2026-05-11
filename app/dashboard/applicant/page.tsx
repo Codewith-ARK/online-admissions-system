@@ -1,8 +1,19 @@
+import { Plus } from "lucide-react";
+import Link from "next/link";
+
 export default function ApplicantDashboard() {
   return (
     <main className="p-8">
-      <h1 className="text-3xl font-bold">Applicant Dashboard</h1>
-      <p className="mt-4">Welcome to your application portal. Here you can track your admission status.</p>
+      <div className="">
+        <h1>Application Management</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aspernatur.</p>
+      </div>
+      <div className="">
+        <Link href={'/institute '} className="btn btn-primary">
+          <Plus />
+          New Application
+        </Link>
+      </div>
     </main>
   );
 }
