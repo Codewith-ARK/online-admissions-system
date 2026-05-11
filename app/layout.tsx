@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import { Toaster } from "sonner";
+import AuthProvider from "@/components/auth/AuthProvider";
 
 const Heading = Manrope({
   weight: ['200', '300', '400', '500', '600', '700', '800'],
@@ -33,10 +34,12 @@ export default function RootLayout({
       className={`${Heading.className} ${Content.className} h-full antialiased`}
     >
       <body>
-        <Navbar />
-        {children}
-        <Footer />
-        <Toaster richColors={true} />
+        <AuthProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <Toaster richColors={true} />
+        </AuthProvider>
       </body>
     </html>
   );

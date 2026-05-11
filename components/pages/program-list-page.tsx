@@ -4,6 +4,7 @@ import { filterData } from '@/utils/filter-data';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import React, { useState } from 'react'
+import SectionHeading from '../ui/typography/section-heading';
 
 type FilterProps = {
     type: string;
@@ -21,7 +22,7 @@ const ProgramListPage = ({
     return (
         <section className='space-y-6'>
             <div className="space-y-1">
-                <h1 className='text-2xl font-semibold'>All Programs</h1>
+                <SectionHeading text='All Programs' />
                 <p className='text-base-content text-sm'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, totam.</p>
 
             </div>

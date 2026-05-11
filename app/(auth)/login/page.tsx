@@ -10,16 +10,17 @@ import { toast } from 'sonner';
 const page = () => {
     const methods = useForm<LoginProps & { showPassword?: boolean }>();
     const { register, handleSubmit, watch } = methods;
-    const { setUser } = useAuth();
+    const { setUser, user } = useAuth();
     const router = useRouter();
     const showPass = watch('showPassword');
 
     const onSubmitHandler = async (data: LoginProps) => {
         try {
             const res = await axios.post('/api/auth/login', data);
-            console.log(res);
             if (res.data?.ok || res.data?.message === 'OK') {
+                console.log(res.data.user);
                 setUser(res.data.user);
+                console.log("['AUTH']:", user);
                 const role = res.data.user.role;
                 switch (role) {
                     case 'APPLICANT':
@@ -64,7 +65,7 @@ const page = () => {
                 </fieldset>
                 <label className="label">
                     <input type="checkbox" className="checkbox" {...register('showPassword')} />
-                    Remember me
+                    Show Password
                 </label>
                 <div className="flex justify-end">
                     <button className='btn btn-link'>Forgot Password?</button>

@@ -3,9 +3,12 @@ import { Menu, Search } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
 import React from 'react'
+import { useAuth } from '../auth/AuthProvider';
 
 function Navbar() {
     const router = useRouter();
+    const { user } = useAuth();
+    console.log(user);
     return (
         <div className="max-lg:collapse bg-base-200 shadow-sm w-full rounded-md">
             <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
@@ -23,24 +26,14 @@ function Navbar() {
                         <li><Link href={'/institute/'}>University</Link></li>
                         <li><button>Scholarships</button></li>
                         <li><button>Contact</button></li>
-                        {/* <li>
-                            <details>
-                                <summary>Scholarships</summary>
-                                <ul className="p-2 bg-base-100 w-40 z-1">
-                                    <li><button>Programs</button></li>
-                                    <li><button>Scholarships</button></li>
-                                    <li><button>Contact</button></li>
-                                </ul>
-                            </details>
-                        </li> */}
                     </ul>
                 </div>
                 <div className="navbar-end gap-3">
-                    <label className="input">
-                        <Search />
-                        <input type="search" className="grow" placeholder="Search" />
-                    </label>
-                    <button onClick={() => router.push('/login')} className='btn btn-primary'>Sign In</button>
+                    {
+                        user !== null
+                            ? <p className='text-xs'>Hello, {`${user.firstName} ${user.lastName}`}</p>
+                            : <button onClick={() => router.push('/login')} className='btn btn-primary'>Sign In</button>
+                    }
                 </div>
             </div>
 
