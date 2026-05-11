@@ -5,9 +5,11 @@ export async function GET(
     { params }: { params: Promise<{ id: string }> }
 ) {
     const { id } = await params;
-    const res = findOne('institute', { id: parseInt(id) });
-    if (!res) return Response.json({ error: 'Institute not found' }, { status: 404 });
-    return Response.json({ data: res });
+
+    const institute = await findOne('institute', { id: parseInt(id) });
+    if (!institute) return Response.json({ error: 'Institute not found' }, { status: 404 });
+
+    return Response.json(institute);
 }
 
 export async function PUT(

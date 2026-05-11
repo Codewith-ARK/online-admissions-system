@@ -7,20 +7,20 @@ export async function POST(request: Request) {
     const data: LoginProps = await request.json();
     try {
         const user: User = await findOne('users', { email: data.email });
-        console.log(user);
         if (!user) {
             return Response.json({ error: 'User not found!' }, { status: 404 });
         }
-        if (user.password !== data.password) {
-            return Response.json({ message: 'Auth failed' }, { status: 403 });
+        if (user.password != data.password) {
+            return Response.json({ error: 'Auth failed' }, { status: 403 });
         }
         return Response.json({
             message: 'OK',
             user: {
                 id: user.id,
                 email: user.email,
-                name: user.name,
-                role: user.role
+                firstName: user.firstName,
+                lastName: user.lastName,
+                role: user.userRole || user.role
             },
         });
     } catch (e) {

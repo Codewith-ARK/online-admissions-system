@@ -5,33 +5,40 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/components/auth/AuthProvider';
+import { toast } from 'sonner';
 
 const page = () => {
-    const methods = useForm();
-    const { register, handleSubmit } = methods;
-    const router = useRouter();
+    const methods = useForm<LoginProps & { showPassword?: boolean }>();
+    const { register, handleSubmit, watch } = methods;
     const { setUser } = useAuth();
+    const router = useRouter();
+    const showPass = watch('showPassword');
 
     const onSubmitHandler = async (data: LoginProps) => {
         try {
             const res = await axios.post('/api/auth/login', data);
-            if (res.data?.ok) {
+            console.log(res);
+            if (res.data?.ok || res.data?.message === 'OK') {
                 setUser(res.data.user);
                 const role = res.data.user.role;
-                if (role === 'APPLICANT') {
-                    router.push('/dashboard/applicant');
-                } else if (role === 'INSTITUTE_MANAGEMENT') {
-                    router.push('/dashboard/institute');
-                } else if (role === 'SUPER_ADMIN') {
-                    router.push('/dashboard/admin');
-                } else {
-                    router.push('/');
+                switch (role) {
+                    case 'APPLICANT':
+                        router.push('/dashboard/applicant');
+                        break;
+                    case 'INSTITUTE_MANAGEMENT':
+                        router.push('/dashboard/institute');
+                        break;
+                    case 'SUPER_ADMIN':
+                        router.push('/dashboard/admin');
+                        break;
+                    default:
+                        router.push('/');
                 }
-            } else {
-                console.error('Login failed', res.data);
             }
         } catch (e) {
-            console.error(e);
+            const error = e as { response?: { data?: { error?: string } } };
+            toast.error('Error', { description: error.response?.data?.error || 'Login failed' });
+            console.error('[AUTH]:', e);
         }
     }
     return (
@@ -53,12 +60,17 @@ const page = () => {
                 </fieldset>
                 <fieldset className="fieldset">
                     <legend className="fieldset-legend">Password</legend>
-                    <input {...register('password')} type="password" className="input w-full" placeholder="password" />
+                    <input {...register('password')} type={showPass ? 'text' : 'password'} className="input w-full" placeholder="password" />
                 </fieldset>
+                <label className="label">
+                    <input type="checkbox" className="checkbox" {...register('showPassword')} />
+                    Remember me
+                </label>
                 <div className="flex justify-end">
                     <button className='btn btn-link'>Forgot Password?</button>
                 </div>
-                <button className='btn btn-primary'>Login</button>
+                <button type='submit' className='btn btn-primary'>Login</button>
+                <button type='button' onClick={() => router.push('/signup')} className='btn'>Signup</button>
             </form>
         </section>
     )

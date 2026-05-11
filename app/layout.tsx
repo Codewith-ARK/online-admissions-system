@@ -3,6 +3,7 @@ import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
+import { Toaster } from "sonner";
 
 const Heading = Manrope({
   weight: ['200', '300', '400', '500', '600', '700', '800'],
@@ -35,6 +36,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Toaster richColors={true} />
       </body>
     </html>
   );

@@ -12,7 +12,7 @@ const InstituteCard = ({
     desc
 }: Institute) => {
     return (
-        <div className='card card-border bg-base-200'>
+        <div className='card card-border border border-neutral-200 shadow-lg bg-base-200'>
             <header className='h-45 overflow-clip rounded-t-lg'>
                 <img src="https://picsum.photos/180/180" className='object-cover w-full h-full' />
             </header>

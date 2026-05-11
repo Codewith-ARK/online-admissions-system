@@ -1,11 +1,12 @@
 "use client";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
+import { User } from "@/types/auth.types";
 
-type User = Record<string, any> | null;
+// type User = Record<string, any> | null;
 
 type AuthContext = {
-  user: User;
+  user: User | null;
   setUser: (u: User) => void;
   logout: () => void;
 };
@@ -17,7 +18,7 @@ const Auth = createContext<AuthContext>({
 });
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<User>(null);
+  const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
 
   useEffect(() => {

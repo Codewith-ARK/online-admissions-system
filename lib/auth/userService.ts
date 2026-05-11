@@ -3,7 +3,8 @@ import { findAll, findOne, insertOne, updateOne, deleteOne } from '@/lib/db/db';
 
 export type User = {
   id: number;
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
   role: UserRoles;

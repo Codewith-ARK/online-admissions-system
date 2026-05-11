@@ -12,3 +12,13 @@ export type User = {
     lastName: string;
     role: UserRoles;
 }
+
+export type RegisterProps = {
+    id?: number;
+    showPassword: boolean;
+    firstName: string;
+    lastName: string;
+    email: string;
+    password: string;
+    userRole: UserRoles;
+}

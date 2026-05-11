@@ -1,23 +1,95 @@
 [
-	{
-		"id": 1,
-		"name": "Applicant User",
-		"email": "applicant@oas.com",
-		"password": "applicant123",
-		"role": "APPLICANT"
-	},
-	{
-		"id": 2,
-		"name": "Institute Manager",
-		"email": "manager@oas.com",
-		"password": "manager123",
-		"role": "INSTITUTE_MANAGEMENT"
-	},
-	{
-		"id": 3,
-		"name": "Super Admin",
-		"email": "admin@oas.com",
-		"password": "admin123",
-		"role": "SUPER_ADMIN"
-	}
+  {
+    "id": 1,
+    "name": "Applicant User",
+    "email": "applicant@oas.com",
+    "password": "applicant123",
+    "role": "APPLICANT"
+  },
+  {
+    "id": 2,
+    "name": "Institute Manager",
+    "email": "manager@oas.com",
+    "password": "manager123",
+    "role": "INSTITUTE_MANAGEMENT"
+  },
+  {
+    "id": 3,
+    "name": "Super Admin",
+    "email": "admin@oas.com",
+    "password": "admin123",
+    "role": "SUPER_ADMIN"
+  },
+  {
+    "showPassword": false,
+    "firstName": "",
+    "lastName": "",
+    "email": "agent1@email.com",
+    "password": "test123+",
+    "userRole": "",
+    "id": 4
+  },
+  {
+    "showPassword": false,
+    "firstName": "",
+    "lastName": "",
+    "email": "agent1@email.com",
+    "password": "test123+",
+    "userRole": "",
+    "id": 5
+  },
+  {
+    "showPassword": false,
+    "firstName": "",
+    "lastName": "",
+    "email": "agent1@email.com",
+    "password": "test123+",
+    "userRole": "",
+    "id": 6
+  },
+  {
+    "showPassword": false,
+    "firstName": "Abdul Rehman",
+    "lastName": "Khan",
+    "email": "agent1@email.com",
+    "password": "test123+",
+    "userRole": "",
+    "id": 7
+  },
+  {
+    "showPassword": false,
+    "firstName": "Abdul Rehman",
+    "lastName": "Khan",
+    "email": "agent1@email.com",
+    "password": "test123+",
+    "userRole": "",
+    "id": 8
+  },
+  {
+    "showPassword": false,
+    "firstName": "Abdul Rehman",
+    "lastName": "Khan",
+    "email": "agent1@email.com",
+    "password": "test123+",
+    "userRole": "",
+    "id": 9
+  },
+  {
+    "showPassword": false,
+    "firstName": "Abdul Rehman",
+    "lastName": "Khan",
+    "email": "agent1@email.com",
+    "password": "test123+",
+    "userRole": "",
+    "id": 10
+  },
+  {
+    "showPassword": false,
+    "firstName": "Abdul Rehman",
+    "lastName": "Khan",
+    "email": "abdulrehmankhan.dev@gmail.com",
+    "password": "test123+",
+    "userRole": "APPLICANT",
+    "id": 11
+  }
 ]

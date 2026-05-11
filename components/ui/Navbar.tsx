@@ -19,8 +19,8 @@ function Navbar() {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><button>Program</button></li>
-                        <li><button onClick={()=>router.push('/institute')}>University</button></li>
+                        <li><Link href={'/programs/'}>Program</Link></li>
+                        <li><Link href={'/institute/'}>University</Link></li>
                         <li><button>Scholarships</button></li>
                         <li><button>Contact</button></li>
                         {/* <li>
@@ -40,7 +40,7 @@ function Navbar() {
                         <Search />
                         <input type="search" className="grow" placeholder="Search" />
                     </label>
-                    <button className='btn btn-primary'>Sign In</button>
+                    <button onClick={() => router.push('/login')} className='btn btn-primary'>Sign In</button>
                 </div>
             </div>
 

@@ -10,9 +10,9 @@ type SelectOption = {
 type SelectInputProps = {
     name: string;
     label: string;
+    options: SelectOption[];
     isOptional?: boolean;
     className?: string;
-    options: SelectOption[];
     placeholder?: string;
 } & Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "name" | "defaultValue">
 
